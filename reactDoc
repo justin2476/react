@@ -1,0 +1,543 @@
+React
+React fragment: Used for avoiding unnecessary <div>
+<React.Fragment>
+</React.Fragment>
+//or
+<>
+</>
+
+Default props: used to define a default props to a function
+App.defaultProps = {
+   cardColor: "blue",
+}
+//or in App function
+static defaultProps = {
+       cardColor: "blue",
+   }
+
+Higher Order Component (HOC): takes a component as parameter and return a augmented component
+import React, {Component} from "react"
+// HOC is a function that takes a component as a parameter
+// and returns a new component wrapping the given component
+// and "supercharging" it by giving it some extra abilities
+ 
+class Toggler extends Component {
+   state = {
+       on: this.props.defaultOnValue
+   }
+  
+ 
+   toggle = () => {
+       this.setState(prevState => {
+           return {
+               on: !prevState.on
+           }
+       })
+   }
+  
+   render() {
+       const Component = this.props.component
+       return (
+           <Component on={this.state.on} toggle={this.toggle} {...this.props} />
+       )
+   }
+}
+ 
+export function withToggler(component, optionsObj) {
+   return function(props) {
+       return (
+           <Toggler component={component} defaultOnValue={optionsObj.defaultOnValue} {...props}/>
+       )
+   }
+}
+//In Component it is called by
+const SuperchargedFavoriteComponent = withToggler(Favorite, {defaultOnValue: false})
+export default SuperchargedFavoriteComponent
+
+
+
+
+Render Props: It's a class which is in charge of all data and doesn’t care of what is been rendered. Eg: Datafetcher
+
+class DataFetcher extends Component {
+   state = {
+       loading: false,
+       data: null
+   }
+   componentDidMount() {
+       this.setState({loading: true})
+       fetch(this.props.url)
+           .then(res => res.json())
+           .then(data => this.setState({data: data, loading: false}))
+   }
+   render() {
+       return (
+           this.props.children(this.state.data, this.state.loading)
+       )
+   }
+}
+export default DataFetcher
+//in App
+function App() {   
+   return (
+       <div>
+           <DataFetcher url="https://swapi.co/api/people/1">
+               {(data, loading) => {
+                   return (
+                       loading ?
+                       <h1>Loading...</h1> :
+                       <p>{JSON.stringify(data)}</p>
+                   )
+               }}
+           </DataFetcher>
+       </div>
+   )
+}
+Context: Its default state management system of react where state is store in separate Higher order component as Provider and states are passed as value to Consumer components as render props=> takes a function and returns the element to render as child props
+
+import React from "react"
+const context = React.createContext()
+const {Consumer,Provider}=context
+class SuperProvider extends React.Component{
+   state={name:"Justin"}
+   changeName=(newName)=>{
+       this.setState({name:newName})
+      
+   }
+   render(){
+       return(
+           <Provider value={{name:this.state.name,fun:this.changeName}}>
+           {this.props.children}
+           </Provider>
+       )
+   }
+}
+export { SuperProvider,Consumer as SuperConsumer,context}
+//wrap App component with provider 
+  <SuperProvider>
+       <App />
+   </SuperProvider>
+//consumer tag where context is to be used
+   <SuperConsumer>
+               {username => (
+                   <p>Welcome, {username.name}!</p>
+               )}
+           </SuperConsumer>
+//or import the context  as
+ App.contextType = context
+Access context as this.context
+useContext Hook: its a hook for context in function
+import React, {useContext} from "react"
+import {ThemeContext} from "./themeContext"
+function Header(props) {
+   const context = useContext(ThemeContext)
+   return (
+       <header className={`${context.theme}-theme`}>
+           <h2>{context.theme === "light" ? "Light" : "Dark"} Theme</h2>
+       </header>
+   )   
+}
+export default Header
+//provider
+import React, {Component} from "react"
+const ThemeContext = React.createContext()
+class ThemeContextProvider extends Component {
+   state = {
+       theme: "dark"
+   }
+   toggleTheme = () => {
+       this.setState(prevState => {
+           return {
+               theme: prevState.theme === "light" ? "dark" : "light"
+           }
+       })
+   }
+   render() {
+       return (
+           <ThemeContext.Provider value={{theme: this.state.theme, toggleTheme: this.toggleTheme}}>
+               {this.props.children}
+           </ThemeContext.Provider>
+       )
+   }
+}
+export {ThemeContextProvider, ThemeContext}
+ 
+useState Hook: It is used to use state in a functional component useState will return an array of 2 items, first one is the state and another to update the state
+import React, {useState} from "react"
+ 
+function App() {
+   const [inputData, setInputData] = useState({firstName: "", lastName: ""})
+   const [contactsData, setContactsData] = useState([])
+  
+   function handleChange(event) {
+       const {name, value} = event.target
+       setInputData(prevInputData => ({...prevInputData, [name]: value}))
+   }
+
+useEffect Hook: It’s the replacement for componentDidMount componentDidUpdate and componentWillUnmount in functional component
+//componentWillUnmount
+useEffect(() => {
+       const intervalId = setInterval(() => {
+           setCount(prevCount => prevCount + 1)
+       }, 1000)
+       return () => clearInterval(intervalId)
+   }, [])
+  //componentDidUpdate and componentDidMount
+   useEffect(() => {
+       setColor(randomcolor())
+   }, [count])
+ 
+Custom Hook: It is a reusable pattern which separates logic and rendering, Here custom hook takes care of state and function and it is passed to rendering function and use those states. Every time custom hook is called a new instance is instantiated 
+import {useState} from "react"
+function useCounter() {
+   const [count, setCount] = useState(0)
+   function increment() {
+       setCount(prevCount => prevCount + 1)
+   }
+   return {count, increment}
+}
+export default useCounter
+//in App
+ 
+import React, {useState} from "react"
+import useCounter from "./useCounter"
+ 
+function App() {
+   const {count, increment} = useCounter()
+  
+   return (
+       <div>
+           <h1>The count is {count}</h1>
+           <button onClick={increment}>Add 1</button>
+       </div>
+   )
+}
+ 
+export default App
+
+
+React Router: It is used to route between pages
+import React from "react"
+import {Switch, Route, Link} from "react-router-dom"
+ 
+import Home from "./Home"
+import About from "./About"
+import Contact from "./Contact"
+ 
+function App() {   
+   return (
+       <div>
+           <nav>
+               <Link to="/">Home</Link>
+               <Link to="/about">About</Link>
+               <Link to="/contact">Contact</Link>
+           </nav>
+          
+           <Switch>
+               <Route exact path="/">
+                   <Home/>
+               </Route>
+               <Route path="/about">
+                   <About/>
+               </Route>
+               <Route path="/contact">
+                   <Contact/>
+               </Route>
+           </Switch>
+       </div>
+   )
+}
+ 
+export default App
+
+Dynamic Routing: it uses the useParams to get the id or what ever passed through links
+
+ <Route path="/products/:productId">
+                   <ProductDetail />
+               </Route>
+
+ <Link to={`/products/${prod.id}`}>{prod.name}</Link>
+
+function ProductDetail() {
+   const {productId} = useParams()
+   const thisProduct = productsData.find(prod => prod.id === productId)
+  
+   return (
+       <div>
+           <h1>{thisProduct.name}</h1>
+           <p>Price: ${thisProduct.price}</p>
+           <p>{thisProduct.description}</p>
+       </div>
+   )
+}
+
+Redirect: It is used to redirect to another page based on some condition, eg: redirect on login to protected page
+
+  <Route path="/private">
+                   {
+                       isLoggedIn ?
+                       <h1>Protected page, must be logged in to be here</h1> :
+                       <Redirect to="/login" />
+                   }
+               </Route>
+useRouteMatch hook:  It is to get the path and url dynamically in a component so that the component know which url leads to that component. Url is used in Link and Path is used in Route
+
+const {path, url} = useRouteMatch()
+ 
+   return (
+       <div>
+           <h1>Profile Page</h1>
+           <ul>
+               <li><Link to={`${url}/info`}>Profile Info</Link></li>
+               <li><Link to={`${url}/settings`}>Profile Settings</Link></li>
+           </ul>
+          
+           <Switch>
+               <Route path={`${path}/info`}>
+                   <Info/>
+               </Route>
+               <Route path={`${path}/settings`}>
+                   <Settings/>
+               </Route>
+           </Switch>
+       </div>
+
+useHistory Hook: It is used to redirect by push goback and replace methods
+   const history = useHistory()
+   function handleClick() {
+       console.log("Submitting...")
+       setTimeout(() => {
+           history.push("/services")
+       }, 2000)
+   }
+
+Redux
+
+Redux is a state management tool, it has several part action creators, reducers, dispatch and store. Store is where data is stored, reducers update the store according to action, dispatchers trigger the action to update the store.
+
+const redux = require("redux")
+ 
+//action creators
+function changeCount(amount = 1) {
+   return {
+       type: "CHANGE_COUNT",
+       payload: amount
+   }
+}
+function addFavoriteThing(thing) {
+   return {
+       type: "ADD_FAVORITE_THING",
+       payload: thing
+   }
+}
+function removeFavoriteThing(thing) {
+   return {
+       type: "REMOVE_FAVORITE_THING",
+       payload: thing
+   }
+}
+const initialState = {
+   count: 0,
+   favoriteThings: [],
+   }
+console.log(initialState)
+ 
+ 
+ 
+ 
+ 
+//reducer
+function reducer(state = initialState, action) {
+   switch(action.type) {
+       case "CHANGE_COUNT":
+           return {
+               ...state,
+               count: state.count + action.payload
+           }
+       case "ADD_FAVORITE_THING":
+           return {
+               ...state,
+               favoriteThings: [...state.favoriteThings, action.payload]
+           }
+       case "REMOVE_FAVORITE_THING": {
+           const arrCopy = [...state.favoriteThings]
+           const updatedArr = state.favoriteThings.filter(thing => thing.toLowerCase() !== action.payload.toLowerCase())
+           return {
+               ...state,
+               favoriteThings: updatedArr
+           }
+       }
+       default:
+           return state
+   }
+}
+//creating store
+const store = redux.createStore(reducer)
+ 
+store.subscribe(() => {
+   console.log(store.getState())
+})
+ 
+ 
+
+Combine Reducers
+const redux = require("redux")
+const {combineReducers, createStore} = redux
+import countReducer from "./count"
+import favoriteThingsReducer from "./favoriteThings"
+import youTubeVideoReducer from "./youTubeVideo"
+const rootReducer = combineReducers({
+   count: countReducer,
+   favoriteThings: favoriteThingsReducer,
+   youTubeVideo: youTubeVideoReducer
+})
+const store = createStore(rootReducer)
+store.subscribe(() => {
+   console.log(store.getState())
+})
+export default store
+// in index
+import store from "./redux"
+import {changeCount} from "./redux/count"
+store.dispatch(changeCount(42))
+ 
+//the count reducer
+export function changeCount(amount = 1) {
+   return {
+       type: "CHANGE_COUNT",
+       payload: amount
+   }
+}
+export default function countReducer(count = 0, action) {
+   switch(action.type) {
+       case "CHANGE_COUNT":
+           return count + action.payload
+       default:
+           return count
+   }
+}
+ 
+//favourite thing reducer
+export function removeFavoriteThing(thing) {
+   return {
+       type: "REMOVE_FAVORITE_THING",
+       payload: thing
+   }
+}
+ 
+export default function favoriteThingsReducer(favoriteThings = [], action) {
+   switch(action.type) {
+       case "ADD_FAVORITE_THING":
+           return [...favoriteThings, action.payload]
+       case "REMOVE_FAVORITE_THING": {           
+           const updatedArr = favoriteThings.filter(thing => thing.toLowerCase() !== action.payload.toLowerCase())
+           return updatedArr
+       }
+       default:
+           return favoriteThings
+   }
+ 
+ 
+
+
+React Redux: Implementation of redux in react
+import React from "react"
+import ReactDOM from "react-dom"
+import {Provider} from "react-redux"
+import store from "./redux"
+import App from "./App"
+ReactDOM.render(
+   <Provider store={store}>
+       <App />
+   </Provider>,
+   document.getElementById("root")
+)
+ 
+//in App
+import React from "react"
+import {connect} from "react-redux"
+import {increment, decrement} from "./redux"
+function App(props) {   
+   return (
+         <div>
+           <h1>{props.count}</h1>
+           <button onClick={props.apples}>-</button>
+           <button onClick={props.oranges}>+</button>
+       </div> )
+}
+function mapStateToProps(state) {
+   return {
+       count: state }
+}
+const mapDispatchToProps = {
+   oranges: increment,
+   apples: decrement
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+//mapStateToProps is what all state to be passed as props
+//mapDispatchToProps what all action to be passed as props
+useSelector and useDispatch Hook: These are hooks to replace connect mapStateToProps,and  mapDispatchToProps      
+import React from "react"
+import {useSelector, useDispatch} from "react-redux"
+import {increment, decrement} from "./redux"
+ 
+function App(props) {
+   const count = useSelector(state => state)
+   const dispatch = useDispatch()
+   return (
+       <div>
+           <h1>{count}</h1>
+           <button onClick={() => dispatch(decrement())}>-</button>
+           <button onClick={() => dispatch(increment())}>+</button>
+       </div>
+   )
+}
+ 
+// export default connect(state => ({count: state}), {increment, decrement})(App)
+export default App
+
+
+
+
+
+
+
+
+Redux thunk middleware: 
+
+import redux, {createStore, applyMiddleware} from "redux"
+import thunk from "redux-thunk"
+export function increment() {
+   return (dispatch, getState) => {
+       const number = getState()
+       const baseUrl = "https://swapi.co/api/people"
+       fetch(`${baseUrl}/${number}`)
+           .then(res => res.json())
+           .then(res => {
+               console.log(res)
+               dispatch({
+                   type: "INCREMENT",
+                   payload: res
+               })
+           })
+   }
+}
+export function decrement() {
+   return {
+       type: "DECREMENT"
+   }
+}
+function reducer(count = 0, action) {
+   switch(action.type) {
+       case "INCREMENT":
+           return count + 1
+       case "DECREMENT":
+           return count - 1
+       default:
+           return count
+   }
+}
+const store = createStore(reducer, applyMiddleware(thunk))
+store.subscribe(() => console.log(store.getState()))
+export default store
+
