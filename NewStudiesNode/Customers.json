@@ -1,0 +1,599 @@
+{
+    "_id" : "C0001NA",
+    "_class" : "com.medlife.account.data.Customer",
+    "mobile" : "1000097553",
+    "ailment" : [ 
+        "", 
+        "Adult onset hearing loss", 
+        "Cancer"
+    ],
+    "isEmailVerified" : false,
+    "isRegistered" : false,
+    "sources" : [ 
+        "GO_RX_CTO"
+    ],
+    "isPrimary" : true,
+    "externalIds" : [],
+    "defaultAddress" : {
+        "type" : "HOME",
+        "addressLine1" : "4/1, 5th Floor, Tower D",
+        "city" : "Mumbai",
+        "state" : "Maharashtra",
+        "pinCode" : "400099",
+        "defaultAddress" : true,
+        "dlVerified" : false,
+        "key" : "address0"
+    },
+    "firstName" : "TestAutobWFtGo",
+    "lastName" : "AutouSQUal",
+    "fullName" : "TESTAUTOBWFTGO AUTOUSQUAL",
+    "gender" : "MALE",
+    "dateOfBirth" : ISODate("1974-12-31T18:30:00.000Z"),
+    "accountStatus" : true,
+    "createdDate" : ISODate("2018-04-24T08:11:27.081Z"),
+    "addresses" : {
+        "address0" : {
+            "type" : "HOME",
+            "addressLine1" : "4/1, 5th Floor, Tower D",
+            "city" : "Mumbai",
+            "state" : "Maharashtra",
+            "pinCode" : "400099",
+            "defaultAddress" : true,
+            "dlVerified" : false,
+            "key" : "address0"
+        }
+    },
+    "brand" : "Medlife"
+}
+
+/* 2 */
+{
+    "_id" : "C0001OA",
+    "_class" : "com.medlife.account.data.Customer",
+    "mobile" : "1000060951",
+    "ailment" : [ 
+        "", 
+        "Adult onset hearing loss", 
+        "Cancer"
+    ],
+    "isEmailVerified" : false,
+    "isRegistered" : false,
+    "sources" : [ 
+        "GO_RX_CTO"
+    ],
+    "isPrimary" : true,
+    "externalIds" : [],
+    "defaultAddress" : {
+        "type" : "HOME",
+        "addressLine1" : "4/1, 5th Floor, Tower D",
+        "city" : "Mumbai",
+        "state" : "Maharashtra",
+        "pinCode" : "400099",
+        "defaultAddress" : true,
+        "dlVerified" : false,
+        "key" : "address0"
+    },
+    "firstName" : "TestAutoqaUQeQ",
+    "lastName" : "AutomzASwd",
+    "fullName" : "TESTAUTOQAUQEQ AUTOMZASWD",
+    "gender" : "MALE",
+    "dateOfBirth" : ISODate("1974-12-31T18:30:00.000Z"),
+    "accountStatus" : true,
+    "createdDate" : ISODate("2018-05-08T08:20:31.783Z"),
+    "addresses" : {
+        "address0" : {
+            "type" : "HOME",
+            "addressLine1" : "4/1, 5th Floor, Tower D",
+            "city" : "Mumbai",
+            "state" : "Maharashtra",
+            "pinCode" : "400099",
+            "defaultAddress" : true,
+            "dlVerified" : false,
+            "key" : "address0"
+        }
+    },
+    "brand" : "Medlife"
+}
+
+/* 3 */
+{
+    "_id" : "C0001PA",
+    "_class" : "com.medlife.account.data.Customer",
+    "email" : "1000098717auto@medlife.com",
+    "mobile" : "1000098717",
+    "ailment" : [ 
+        "", 
+        "Adult onset hearing loss", 
+        "Cancer"
+    ],
+    "isEmailVerified" : false,
+    "isRegistered" : true,
+    "appCustomerName" : "TESTAUTOPNVKED AUTOMYKZCL",
+    "sources" : [ 
+        "GO_RX"
+    ],
+    "partners" : [ 
+        {
+            "_id" : "",
+            "createdDate" : ISODate("2018-05-22T18:38:00.712Z"),
+            "isPrimary" : true,
+            "lastOrderCreatedDate" : ISODate("2018-07-05T08:59:05.449Z")
+        }
+    ],
+    "isPrimary" : true,
+    "externalIds" : [],
+    "referralCode" : "TESOQXY",
+    "defaultAddress" : {
+        "type" : "HOME",
+        "addressLine1" : "4/1, 5th Floor, Tower D",
+        "city" : "Bangalore",
+        "state" : "Karnataka",
+        "pinCode" : "560030",
+        "defaultAddress" : true,
+        "dlVerified" : false,
+        "key" : "address0"
+    },
+    "firstName" : "TestAutoPnvked",
+    "lastName" : "AutomYkzCl",
+    "fullName" : "TESTAUTOPNVKED AUTOMYKZCL",
+    "gender" : "MALE",
+    "dateOfBirth" : ISODate("1974-12-31T18:30:00.000Z"),
+    "accountStatus" : true,
+    "createdDate" : ISODate("2018-05-22T18:38:00.712Z"),
+    "addresses" : {
+        "address0" : {
+            "type" : "HOME",
+            "addressLine1" : "4/1, 5th Floor, Tower D",
+            "city" : "Bangalore",
+            "state" : "Karnataka",
+            "pinCode" : "560030",
+            "defaultAddress" : true,
+            "dlVerified" : false,
+            "key" : "address0"
+        }
+    },
+    "login" : {
+        "password" : "$2a$10$VtedQgBGcnPzqRJ/8Uwv1exp7kgs5cenQixB7F68JIXSH.sVhe1gC",
+        "failedAttempts" : 0,
+        "createDate" : ISODate("2018-05-22T18:38:00.611Z"),
+        "updateDate" : ISODate("2018-05-22T18:38:00.711Z"),
+        "passwordExpiryDate" : ISODate("2118-08-20T18:38:00.711Z"),
+        "locked" : false,
+        "enabled" : true,
+        "role" : {
+            "$ref" : "roles",
+            "$id" : ObjectId("54fee19ae1e701be7c739959")
+        }
+    },
+    "updatedDate" : ISODate("2018-05-22T18:38:20.725Z"),
+    "brand" : "Medlife"
+}
+
+/* 4 */
+{
+    "_id" : "C0001QA",
+    "_class" : "com.medlife.account.data.Customer",
+    "email" : "1000056527auto@medlife.com",
+    "mobile" : "1000056527",
+    "isEmailVerified" : false,
+    "isRegistered" : true,
+    "appCustomerName" : "TESTAUTOEVOWRN AUTOEGLVIZ",
+    "sources" : [ 
+        "GO_RX", 
+        "CORP_RX"
+    ],
+    "partners" : [ 
+        {
+            "_id" : "",
+            "createdDate" : ISODate("2018-06-04T10:06:24.184Z"),
+            "isPrimary" : true,
+            "lastOrderCreatedDate" : ISODate("2018-07-05T08:59:05.449Z")
+        }
+    ],
+    "isPrimary" : true,
+    "externalIds" : [],
+    "referralCode" : "TESNHON",
+    "firstName" : "TestAutoevowrn",
+    "lastName" : "AutoEGLVIz",
+    "fullName" : "TESTAUTOEVOWRN AUTOEGLVIZ",
+    "dateOfBirth" : ISODate("1974-12-31T18:30:00.000Z"),
+    "accountStatus" : true,
+    "createdDate" : ISODate("2018-06-04T10:06:24.184Z"),
+    "addresses" : {
+        "address0" : {
+            "type" : "HOME",
+            "addressLine1" : "4/1, 5th Floor, Tower D",
+            "addressLine2" : "IBC Knowledge Park",
+            "city" : "Mumbai",
+            "state" : "Maharashtra",
+            "pinCode" : "400025",
+            "contactNumber" : "1000056527",
+            "defaultAddress" : true,
+            "name" : "TestAutoevowrn AutoEGLVIz",
+            "dlVerified" : false,
+            "key" : "address0"
+        }
+    },
+    "login" : {
+        "password" : "$2a$10$R6y8VJpk6.zrndGlc4I.2.n4H.Da6OgpFR45IwkEclsqdB44hHhVu",
+        "failedAttempts" : 0,
+        "createDate" : ISODate("2018-06-04T10:06:24.078Z"),
+        "updateDate" : ISODate("2018-06-04T10:06:24.184Z"),
+        "passwordExpiryDate" : ISODate("2118-09-02T10:06:24.184Z"),
+        "locked" : false,
+        "enabled" : true,
+        "role" : {
+            "$ref" : "roles",
+            "$id" : ObjectId("54fee19ae1e701be7c739959")
+        }
+    },
+    "updatedDate" : ISODate("2018-06-04T10:06:49.000Z"),
+    "brand" : "Medlife"
+}
+
+/* 5 */
+{
+    "_id" : "C0002NA",
+    "_class" : "com.medlife.account.data.Customer",
+    "email" : "1000012394auto@medlife.com",
+    "mobile" : "1000012394",
+    "ailment" : [ 
+        "", 
+        "Adult onset hearing loss", 
+        "Cancer"
+    ],
+    "isEmailVerified" : false,
+    "isRegistered" : true,
+    "appCustomerName" : "TESTAUTOLXLLHJ AUTOQUEMNX",
+    "sources" : [ 
+        "GO_RX"
+    ],
+    "partners" : [ 
+        {
+            "_id" : "",
+            "createdDate" : ISODate("2018-04-24T08:14:19.238Z"),
+            "isPrimary" : true,
+            "lastOrderCreatedDate" : ISODate("2018-07-05T08:59:05.449Z")
+        }
+    ],
+    "isPrimary" : true,
+    "externalIds" : [],
+    "referralCode" : "TES9IPD",
+    "defaultAddress" : {
+        "type" : "HOME",
+        "addressLine1" : "4/1, 5th Floor, Tower D",
+        "city" : "Bangalore",
+        "state" : "Karnataka",
+        "pinCode" : "560037",
+        "defaultAddress" : true,
+        "dlVerified" : false,
+        "key" : "address0"
+    },
+    "firstName" : "TestAutolXlLhJ",
+    "lastName" : "AutoQUeMnx",
+    "fullName" : "TESTAUTOLXLLHJ AUTOQUEMNX",
+    "gender" : "MALE",
+    "dateOfBirth" : ISODate("1974-12-31T18:30:00.000Z"),
+    "accountStatus" : true,
+    "createdDate" : ISODate("2018-04-24T08:14:19.238Z"),
+    "addresses" : {
+        "address0" : {
+            "type" : "HOME",
+            "addressLine1" : "4/1, 5th Floor, Tower D",
+            "city" : "Bangalore",
+            "state" : "Karnataka",
+            "pinCode" : "560037",
+            "defaultAddress" : true,
+            "dlVerified" : false,
+            "key" : "address0"
+        }
+    },
+    "login" : {
+        "password" : "$2a$10$RZDOqWaXT8Nf40BwKVpDL.3OFeWvGOkKoZE/AlUvpMb5kNOxhBptm",
+        "failedAttempts" : 0,
+        "createDate" : ISODate("2018-04-24T08:14:19.126Z"),
+        "updateDate" : ISODate("2018-04-24T08:14:19.238Z"),
+        "passwordExpiryDate" : ISODate("2118-07-23T08:14:19.238Z"),
+        "locked" : false,
+        "enabled" : true,
+        "role" : {
+            "$ref" : "roles",
+            "$id" : ObjectId("54fee19ae1e701be7c739959")
+        }
+    },
+    "updatedDate" : ISODate("2018-04-24T08:15:50.872Z"),
+    "brand" : "Medlife"
+}
+
+/* 6 */
+{
+    "_id" : "C0002OA",
+    "_class" : "com.medlife.account.data.Customer",
+    "email" : "1000074655auto@medlife.com",
+    "mobile" : "1000074655",
+    "ailment" : [ 
+        "", 
+        "Adult onset hearing loss", 
+        "Cancer"
+    ],
+    "isEmailVerified" : false,
+    "isRegistered" : true,
+    "appCustomerName" : "TESTAUTOQAUQEQ AUTOMZASWD",
+    "sources" : [ 
+        "GO_RX"
+    ],
+    "partners" : [ 
+        {
+            "_id" : "",
+            "createdDate" : ISODate("2018-05-08T08:20:37.599Z"),
+            "isPrimary" : true,
+            "lastOrderCreatedDate" : ISODate("2018-07-05T08:59:05.449Z")
+        }
+    ],
+    "isPrimary" : true,
+    "externalIds" : [],
+    "referralCode" : "TESQN5J",
+    "defaultAddress" : {
+        "type" : "HOME",
+        "addressLine1" : "4/1, 5th Floor, Tower D",
+        "city" : "Mumbai",
+        "state" : "Maharashtra",
+        "pinCode" : "400099",
+        "defaultAddress" : true,
+        "dlVerified" : false,
+        "key" : "address0"
+    },
+    "firstName" : "TestAutoqaUQeQ",
+    "lastName" : "AutomzASwd",
+    "fullName" : "TESTAUTOQAUQEQ AUTOMZASWD",
+    "gender" : "MALE",
+    "dateOfBirth" : ISODate("1974-12-31T18:30:00.000Z"),
+    "accountStatus" : true,
+    "createdDate" : ISODate("2018-05-08T08:20:37.599Z"),
+    "addresses" : {
+        "address0" : {
+            "type" : "HOME",
+            "addressLine1" : "4/1, 5th Floor, Tower D",
+            "city" : "Mumbai",
+            "state" : "Maharashtra",
+            "pinCode" : "400099",
+            "defaultAddress" : true,
+            "dlVerified" : false,
+            "key" : "address0"
+        }
+    },
+    "login" : {
+        "password" : "$2a$10$yKWri/PKu7psN4cPXVBdnekzmDsrqSeg24afNfhkr/bx6GPX/MthO",
+        "failedAttempts" : 0,
+        "createDate" : ISODate("2018-05-08T08:20:37.497Z"),
+        "updateDate" : ISODate("2018-05-08T08:20:37.599Z"),
+        "passwordExpiryDate" : ISODate("2118-08-06T08:20:37.599Z"),
+        "locked" : false,
+        "enabled" : true,
+        "role" : {
+            "$ref" : "roles",
+            "$id" : ObjectId("54fee19ae1e701be7c739959")
+        }
+    },
+    "updatedDate" : ISODate("2018-05-08T08:20:57.473Z"),
+    "brand" : "Medlife"
+}
+
+/* 7 */
+{
+    "_id" : "C0002PA",
+    "_class" : "com.medlife.account.data.Customer",
+    "email" : "1000082082auto@medlife.com",
+    "mobile" : "1000082082",
+    "ailment" : [ 
+        "", 
+        "Adult onset hearing loss", 
+        "Cancer"
+    ],
+    "isEmailVerified" : false,
+    "isRegistered" : true,
+    "appCustomerName" : "TESTAUTOPNVKED AUTOMYKZCL",
+    "sources" : [ 
+        "GO_RX"
+    ],
+    "partners" : [ 
+        {
+            "_id" : "",
+            "createdDate" : ISODate("2018-05-22T18:38:09.752Z"),
+            "isPrimary" : true,
+            "lastOrderCreatedDate" : ISODate("2018-07-05T08:59:05.449Z")
+        }
+    ],
+    "isPrimary" : true,
+    "externalIds" : [],
+    "referralCode" : "TESYI1N",
+    "defaultAddress" : {
+        "type" : "HOME",
+        "addressLine1" : "4/1, 5th Floor, Tower D",
+        "city" : "Bangalore",
+        "state" : "Karnataka",
+        "pinCode" : "560030",
+        "defaultAddress" : true,
+        "dlVerified" : false,
+        "key" : "address0"
+    },
+    "firstName" : "TestAutoPnvked",
+    "lastName" : "AutomYkzCl",
+    "fullName" : "TESTAUTOPNVKED AUTOMYKZCL",
+    "gender" : "MALE",
+    "dateOfBirth" : ISODate("1974-12-31T18:30:00.000Z"),
+    "accountStatus" : true,
+    "createdDate" : ISODate("2018-05-22T18:38:09.752Z"),
+    "addresses" : {
+        "address0" : {
+            "type" : "HOME",
+            "addressLine1" : "4/1, 5th Floor, Tower D",
+            "city" : "Bangalore",
+            "state" : "Karnataka",
+            "pinCode" : "560030",
+            "defaultAddress" : false,
+            "dlVerified" : false,
+            "key" : "address0"
+        },
+        "address1" : {
+            "addressLine1" : "4/1, 5th Floor, Tower D",
+            "city" : "Mumbai",
+            "state" : "Maharashtra",
+            "pinCode" : "400099",
+            "defaultAddress" : true,
+            "dlVerified" : false,
+            "key" : "address1"
+        }
+    },
+    "login" : {
+        "password" : "$2a$10$hi50HVAet/BiKtEtpPfToeH91MTc/gWaLu.BCjJG.k3B9HrYFNQHG",
+        "failedAttempts" : 0,
+        "createDate" : ISODate("2018-05-22T18:38:09.649Z"),
+        "updateDate" : ISODate("2018-05-22T18:38:09.752Z"),
+        "passwordExpiryDate" : ISODate("2118-08-20T18:38:09.752Z"),
+        "locked" : false,
+        "enabled" : true,
+        "role" : {
+            "$ref" : "roles",
+            "$id" : ObjectId("54fee19ae1e701be7c739959")
+        }
+    },
+    "updatedDate" : ISODate("2018-05-27T20:33:24.340Z"),
+    "brand" : "Medlife"
+}
+
+/* 8 */
+{
+    "_id" : "C0002QA",
+    "_class" : "com.medlife.account.data.Customer",
+    "email" : "1000029456auto@medlife.com",
+    "mobile" : "1000029456",
+    "isEmailVerified" : false,
+    "isRegistered" : true,
+    "appCustomerName" : "TESTAUTOEVOWRN AUTOEGLVIZ",
+    "sources" : [ 
+        "GO_RX", 
+        "CORP_RX"
+    ],
+    "partners" : [ 
+        {
+            "_id" : "",
+            "createdDate" : ISODate("2018-06-04T10:06:48.158Z"),
+            "isPrimary" : true,
+            "lastOrderCreatedDate" : ISODate("2018-07-05T08:59:05.449Z")
+        }
+    ],
+    "isPrimary" : true,
+    "externalIds" : [],
+    "referralCode" : "TESUC4X",
+    "firstName" : "TestAutoevowrn",
+    "lastName" : "AutoEGLVIz",
+    "fullName" : "TESTAUTOEVOWRN AUTOEGLVIZ",
+    "dateOfBirth" : ISODate("1974-12-31T18:30:00.000Z"),
+    "accountStatus" : true,
+    "createdDate" : ISODate("2018-06-04T10:06:48.158Z"),
+    "addresses" : {
+        "address0" : {
+            "type" : "HOME",
+            "addressLine1" : "4/1, 5th Floor, Tower D",
+            "addressLine2" : "IBC Knowledge Park",
+            "city" : "Mumbai",
+            "state" : "Maharashtra",
+            "pinCode" : "400025",
+            "contactNumber" : "1000029456",
+            "defaultAddress" : true,
+            "name" : "TestAutoevowrn AutoEGLVIz",
+            "dlVerified" : false,
+            "key" : "address0"
+        }
+    },
+    "login" : {
+        "password" : "$2a$10$Y0.Z57ijhyybEEcqRrgeA.driIR6cwrYqH8nybtiynlHWtMG1PcDe",
+        "failedAttempts" : 0,
+        "createDate" : ISODate("2018-06-04T10:06:48.055Z"),
+        "updateDate" : ISODate("2018-06-04T10:06:48.158Z"),
+        "passwordExpiryDate" : ISODate("2118-09-02T10:06:48.158Z"),
+        "locked" : false,
+        "enabled" : true,
+        "role" : {
+            "$ref" : "roles",
+            "$id" : ObjectId("54fee19ae1e701be7c739959")
+        }
+    },
+    "updatedDate" : ISODate("2018-06-04T10:07:11.391Z"),
+    "brand" : "Medlife"
+}
+
+/* 9 */
+{
+    "_id" : "C0003NA",
+    "_class" : "com.medlife.account.data.Customer",
+    "email" : "1000099253auto@medlife.com",
+    "mobile" : "1000099253",
+    "ailment" : [ 
+        "", 
+        "Adult onset hearing loss", 
+        "Cancer"
+    ],
+    "isEmailVerified" : false,
+    "isRegistered" : true,
+    "appCustomerName" : "TESTAUTOLXLLHJ AUTOQUEMNX",
+    "sources" : [ 
+        "GO_RX"
+    ],
+    "partners" : [ 
+        {
+            "_id" : "",
+            "createdDate" : ISODate("2018-04-24T08:14:19.282Z"),
+            "isPrimary" : true,
+            "lastOrderCreatedDate" : ISODate("2018-07-05T08:59:05.449Z")
+        }
+    ],
+    "isPrimary" : true,
+    "externalIds" : [],
+    "referralCode" : "TESCHG5",
+    "defaultAddress" : {
+        "type" : "HOME",
+        "addressLine1" : "4/1, 5th Floor, Tower D",
+        "city" : "Bangalore",
+        "state" : "Karnataka",
+        "pinCode" : "560037",
+        "defaultAddress" : true,
+        "dlVerified" : false,
+        "key" : "address0"
+    },
+    "firstName" : "TestAutolXlLhJ",
+    "lastName" : "AutoQUeMnx",
+    "fullName" : "TESTAUTOLXLLHJ AUTOQUEMNX",
+    "gender" : "MALE",
+    "dateOfBirth" : ISODate("1974-12-31T18:30:00.000Z"),
+    "accountStatus" : true,
+    "createdDate" : ISODate("2018-04-24T08:14:19.282Z"),
+    "addresses" : {
+        "address0" : {
+            "type" : "HOME",
+            "addressLine1" : "4/1, 5th Floor, Tower D",
+            "city" : "Bangalore",
+            "state" : "Karnataka",
+            "pinCode" : "560037",
+            "defaultAddress" : true,
+            "dlVerified" : false,
+            "key" : "address0"
+        }
+    },
+    "login" : {
+        "password" : "$2a$10$5z9Jyyd0ZZ8duku2g/hqFez8kZ9ii5Zdz4VVDZQIqkesnOZsTcpfG",
+        "failedAttempts" : 0,
+        "createDate" : ISODate("2018-04-24T08:14:19.171Z"),
+        "updateDate" : ISODate("2018-04-24T08:14:19.282Z"),
+        "passwordExpiryDate" : ISODate("2118-07-23T08:14:19.282Z"),
+        "locked" : false,
+        "enabled" : true,
+        "role" : {
+            "$ref" : "roles",
+            "$id" : ObjectId("54fee19ae1e701be7c739959")
+        }
+    },
+    "updatedDate" : ISODate("2018-04-24T08:14:40.759Z"),
+    "brand" : "Medlife"
+} 
